@@ -1,23 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App/App";
-import reportWebVitals from "./reportWebVitals";
+import App from "./src/App/App";
+import reportWebVitals from "./src/reportWebVitals";
 // Import shared classes to be exported
-import BaseApp, { installEditor, installTool } from "./App/BaseApp";
-import { Store, DBSubscriber } from "./store";
-import { Model, Manager } from "./models";
-import { withAlerts, withTheme, withKeyBinds } from "./decorators";
-import { withEditorPlugin, withViewPlugin } from "./engine";
+import BaseApp, { installEditor, installTool } from "./src/App/BaseApp";
+import { Store, DBSubscriber } from "./src/store";
+import { Model, Manager } from "./src/models";
+import { withAlerts, withTheme, withKeyBinds } from "./src/decorators";
+import { withEditorPlugin, withViewPlugin } from "./src/engine";
 // Import editors
-import { CallbackModel, CallbackStore, CallbackView } from "./editors/Callback";
+import {
+  CallbackModel,
+  CallbackStore,
+  CallbackView
+} from "./src/editors/Callback";
 import {
   ConfigurationModel,
   ConfigurationStore,
   ConfigurationView
-} from "./editors/Configuration";
-import { NodeModel, NodeStore, NodeView } from "./editors/Node";
-import { FlowModel, FlowStore, FlowView } from "./editors/Flow";
+} from "./src/editors/Configuration";
+import { NodeModel, NodeStore, NodeView } from "./src/editors/Node";
+import { FlowModel, FlowStore, FlowView } from "./src/editors/Flow";
 
 ReactDOM.render(
   <React.StrictMode>
