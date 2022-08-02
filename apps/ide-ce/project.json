@@ -1,0 +1,81 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ide-ce/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/ide-ce",
+        "index": "apps/ide-ce/src/index.html",
+        "baseHref": "/",
+        "main": "apps/ide-ce/src/main.tsx",
+        "polyfills": "apps/ide-ce/src/polyfills.ts",
+        "tsConfig": "apps/ide-ce/tsconfig.app.json",
+        "assets": ["apps/ide-ce/src/favicon.ico", "apps/ide-ce/src/assets"],
+        "styles": ["apps/ide-ce/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/ide-ce/src/environments/environment.ts",
+              "with": "apps/ide-ce/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ide-ce:build",
+        "proxyConfig": "apps/ide-ce/proxy.conf.json",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ide-ce:build:development"
+        },
+        "production": {
+          "buildTarget": "ide-ce:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ide-ce/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/ide-ce"],
+      "options": {
+        "jestConfig": "apps/ide-ce/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

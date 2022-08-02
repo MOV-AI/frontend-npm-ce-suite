@@ -1,2 +1,0 @@
-Callback:*
-Configuration:app-ide-ce
