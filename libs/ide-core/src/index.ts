@@ -28,11 +28,6 @@ import ShortcutsPlugin, {
   getShortcutsTab,
 } from "./lib/tools/AppShortcuts/AppShortcuts";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
-
 // Export classes to build App
 export { BaseApp, installEditor, installTool };
 export { Store, DBSubscriber };
@@ -49,3 +44,4 @@ export { CONSTANTS };
 export { ApplicationTheme };
 export { HomeTabPlugin, getHomeTab };
 export { ShortcutsPlugin, getShortcutsTab };
+export { reportWebVitals };
