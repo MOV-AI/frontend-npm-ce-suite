@@ -2,7 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "ide-ce": "apps/ide-ce",
-    "ide-core": "libs/ide-core"
+    "mov-fe-app-ide-ce": "apps/mov-fe-app-ide-ce",
+    "mov-fe-lib-ide": "libs/mov-fe-lib-ide"
   }
 }

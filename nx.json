@@ -15,21 +15,14 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "ZGZhYjkxMjgtMTQ3Zi00ODA2LWFhYjItNzM3ZGFlMGJiZTYwfHJlYWQtd3JpdGU="
       }
     }
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     }
   },
   "generators": {
@@ -48,5 +41,5 @@
       }
     }
   },
-  "defaultProject": "ide-ce"
+  "defaultProject": "mov-fe-app-ide-ce"
 }
