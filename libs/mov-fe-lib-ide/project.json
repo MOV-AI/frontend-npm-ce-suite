@@ -8,6 +8,7 @@
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "generatePackageJson": true,
         "outputPath": "dist/libs/mov-fe-lib-ide",
         "tsConfig": "libs/mov-fe-lib-ide/tsconfig.lib.json",
         "project": "libs/mov-fe-lib-ide/package.json",
