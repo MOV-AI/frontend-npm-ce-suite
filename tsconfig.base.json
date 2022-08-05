@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mov-ai/mov-fe-lib-code-editor": [
+        "libs/mov-fe-lib-code-editor/src/index.ts"
+      ],
       "@mov-ai/mov-fe-lib-ide": ["libs/mov-fe-lib-ide/src/index.ts"]
     }
   },
