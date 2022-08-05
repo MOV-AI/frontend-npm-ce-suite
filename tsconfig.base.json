@@ -18,7 +18,8 @@
       "@mov-ai/mov-fe-lib-code-editor": [
         "libs/mov-fe-lib-code-editor/src/index.ts"
       ],
-      "@mov-ai/mov-fe-lib-ide": ["libs/mov-fe-lib-ide/src/index.ts"]
+      "@mov-ai/mov-fe-lib-ide": ["libs/mov-fe-lib-ide/src/index.ts"],
+      "@mov-ai/mov-fe-lib-react": ["libs/mov-fe-lib-react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
