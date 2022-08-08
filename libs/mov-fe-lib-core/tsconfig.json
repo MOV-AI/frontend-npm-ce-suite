@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false,
+    "noImplicitOverride": true,
+    "esModuleInterop": true,
+    "noImplicitReturns": true
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}

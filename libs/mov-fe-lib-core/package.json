@@ -1,0 +1,37 @@
+{
+  "name": "@mov-ai/mov-fe-lib-core",
+  "version": "0.0.1998",
+  "description": "The Mov.AI's core frontend library.",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/mov-ai"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "testDev": "jest --watchAll",
+    "clean": "rm -r node_modules; rm package-lock.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MOV-AI/frontend-npm-lib-core.git"
+  },
+  "keywords": [
+    "frontend",
+    "core",
+    "common",
+    "utils"
+  ],
+  "author": "MOV.AI",
+  "license": "ISC",
+  "homepage": "https://github.com/MOV-AI/frontend-npm-lib-core/blob/main/README.md",
+  "typesVersions": {
+    "*": {
+      "api": [
+        "dist/src/api/index.d.ts"
+      ],
+      "models": [
+        "dist/src/models/index.d.ts"
+      ]
+    }
+  }
+}

@@ -4,6 +4,7 @@
   "projects": {
     "mov-fe-app-ide-ce": "apps/mov-fe-app-ide-ce",
     "mov-fe-lib-code-editor": "libs/mov-fe-lib-code-editor",
+    "mov-fe-lib-core": "libs/mov-fe-lib-core",
     "mov-fe-lib-ide": "libs/mov-fe-lib-ide",
     "mov-fe-lib-react": "libs/mov-fe-lib-react"
   }

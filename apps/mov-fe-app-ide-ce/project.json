@@ -9,6 +9,7 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
+        "webpackConfig": "apps/mov-fe-app-ide-ce/webpack.config.js",
         "outputPath": "dist/apps/mov-fe-app-ide-ce",
         "index": "apps/mov-fe-app-ide-ce/src/index.html",
         "baseHref": "/",
@@ -20,8 +21,7 @@
           "apps/mov-fe-app-ide-ce/src/assets"
         ],
         "styles": ["apps/mov-fe-app-ide-ce/src/styles.css"],
-        "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "scripts": []
       },
       "configurations": {
         "development": {

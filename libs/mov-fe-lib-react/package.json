@@ -1,4 +1,35 @@
 {
   "name": "@mov-ai/mov-fe-lib-react",
-  "version": "0.0.1"
+  "version": "0.0.1998",
+  "description": "The Mov.AI's frontend library for React.",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/mov-ai"
+  },
+  "main": "./dist/index.js",
+  "proxy": {
+    "/token-auth": "http://localhost/token-auth",
+    "/ws/subscriber": "http://localhost/ws/subscriber",
+    "/api/v1": "http://localhost/api/v1"
+  },
+  "scripts": {
+    "test": "jest",
+    "testDev": "jest --watchAll",
+    "clean": "rm -rf node_modules/ package-lock.json",
+    "storybook": "start-storybook -p 3001",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MOV-AI/frontend-npm-lib-react.git"
+  },
+  "keywords": [
+    "frontend",
+    "core",
+    "common",
+    "react",
+    "utils"
+  ],
+  "author": "MOV.AI",
+  "license": "ISC",
+  "homepage": "https://github.com/MOV-AI/frontend-npm-lib-react/blob/main/README.md"
 }
