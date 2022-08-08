@@ -1,4 +1,35 @@
 {
   "name": "@mov-ai/mov-fe-lib-ide",
-  "version": "0.0.1998-0"
+  "version": "0.0.1998-0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/mov-ai"
+  },
+  "main": "../../dist/libs/mov-fe-lib-ide/index.js",
+  "movai": {
+    "name": "mov-fe-app-ide",
+    "Label": "IDE",
+    "Type": "application",
+    "Package": "mov-fe-app-ide",
+    "EntryPoint": "index.html",
+    "Description": "Integrated Development Environment",
+    "Icon": "fas fa-code",
+    "Callbacks": [
+      "backend.viewer",
+      "backend.CallbackEditor",
+      "backend.FlowAPI"
+    ],
+    "Configuration": "app-ide",
+    "CustomConfiguration": "app-custom-ide",
+    "Version": "0.0.1",
+    "generateMetadata": true
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/@babel/core",
+      "/node_modules/@babylon/core"
+    ],
+    "moduleNameMapper": {
+      "ace-builds": "<rootDir>/node_modules/ace-builds"
+    }
+  }
 }

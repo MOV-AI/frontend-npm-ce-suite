@@ -1,5 +1,5 @@
 {
-  "name": "frontend-npm-ce-suite",
+  "name": "@mov-ai/mov-fe-ce-suite",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
