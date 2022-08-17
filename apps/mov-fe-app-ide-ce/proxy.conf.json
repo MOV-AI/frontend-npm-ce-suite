@@ -1,8 +1,0 @@
-{
-  "/": {
-    "target": "https://localhost",
-    "ws": true,
-    "logLevel": "debug",
-    "secure": false
-  }
-}

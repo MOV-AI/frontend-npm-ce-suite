@@ -13,10 +13,10 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@mov-ai/mov-fe-lib-ide": ["libs/mov-fe-lib-ide/src/index.ts"]
-    }
+    "baseUrl": "."
+    // "paths": {
+    //   "@mov-ai/mov-fe-lib-ide": ["packages/mov-fe-lib-ide/src/index.ts"]
+    // }
   },
   "exclude": ["node_modules", "tmp"]
 }
