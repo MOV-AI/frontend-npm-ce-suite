@@ -27,6 +27,7 @@ import HomeTabPlugin, { getHomeTab } from "./lib/tools/HomeTab/HomeTab";
 import ShortcutsPlugin, {
   getShortcutsTab,
 } from "./lib/tools/AppShortcuts/AppShortcuts";
+import { ThemeProvider } from "@material-ui/core/styles";
 
 // Export classes to build App
 export { BaseApp, installEditor, installTool };
@@ -41,7 +42,7 @@ export { NodeModel, NodeStore, NodeView };
 export { FlowModel, FlowStore, FlowView };
 export { FlowExplorer };
 export { CONSTANTS };
-export { ApplicationTheme };
 export { HomeTabPlugin, getHomeTab };
 export { ShortcutsPlugin, getShortcutsTab };
 export { reportWebVitals };
+export { ThemeProvider, ApplicationTheme };
