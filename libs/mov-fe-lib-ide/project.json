@@ -13,7 +13,7 @@
         "tsConfig": "libs/mov-fe-lib-ide/tsconfig.lib.json",
         "project": "libs/mov-fe-lib-ide/package.json",
         "entryFile": "libs/mov-fe-lib-ide/src/index.ts",
-        "external": ["react/jsx-runtime"],
+        "external": ["react/jsx-runtime", "@material-ui/core"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
