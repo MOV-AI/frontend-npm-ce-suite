@@ -72,6 +72,16 @@
     "scripts",
     "debian"
   ],
+  "nx": {
+    "targets": {
+      "build": {
+        "outputs": [
+          "{projectRoot}/build",
+          "{projectRoot}/public/build"
+        ]
+      }
+    }
+  },
   "movai": {
     "name": "mov-fe-app-ide-ce",
     "Label": "MOV.AI Flow™",
