@@ -15,6 +15,7 @@
     "@mov-ai/mov-fe-lib-core": "^1.1.1-11",
     "@mov-ai/mov-fe-lib-ide": "*",
     "@mov-ai/mov-fe-lib-react": "^1.1.1-12",
+    "@types/react": "^18.0.17",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-i18next": "^11.13.0",
@@ -34,7 +35,8 @@
     "build": "react-scripts --max_old_space_size=4096 build && python3 ./scripts/detach_manifest.py",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "clean": "rm -r node_modules; rm package-lock.json",
+    "clean": "rm -rf node_modules/ package-lock.json build/",
+    "install": "npm i",
     "deploy": "./scripts/deployApp.sh mov-fe-app-ide-ce",
     "coverage": "npm test -- --coverage"
   },

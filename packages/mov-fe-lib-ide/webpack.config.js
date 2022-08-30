@@ -18,6 +18,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.m?js/,
+        type: "javascript/auto"
+      },
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false
+        }
+      },
+      {
         test: /\.(js|mjs|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
@@ -57,6 +67,10 @@ module.exports = {
         use: {
           loader: "url-loader"
         }
+      },
+      {
+        test: /\.json$/,
+        loader: "json-loader"
       }
     ]
   }

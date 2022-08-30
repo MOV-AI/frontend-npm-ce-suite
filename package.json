@@ -1,8 +1,8 @@
 {
-  "name": "root",
+  "name": "@mov-ai/mov-fe-ce-suite",
   "private": false,
   "scripts": {
-    "clean": "rm -rf node_modules/ package-lock.json"
+    "clean": "rm -rf node_modules/ package-lock.json dist/"
   },
   "workspaces": [
     "packages/*"
