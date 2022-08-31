@@ -2,7 +2,8 @@
   "name": "@mov-ai/mov-fe-ce-suite",
   "private": false,
   "scripts": {
-    "clean": "rm -rf node_modules/ package-lock.json dist/"
+    "clean": "rm -rf node_modules/ package-lock.json dist/",
+    "dev": "cd packages/mov-fe-lib-ide && npm run storybook"
   },
   "workspaces": [
     "packages/*"
