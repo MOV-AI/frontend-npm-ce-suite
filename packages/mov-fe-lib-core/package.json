@@ -8,10 +8,12 @@
   "main": "./dist/index.js",
   "scripts": {
     "test": "jest",
+    "installDep": "npm ci",
+    "reinstallDep": "npm run clean && npm i",
     "testDev": "jest --watchAll",
     "build": "webpack --mode=production",
     "buildDev": "webpack --mode=development --watch",
-    "clean": "rm -r node_modules; rm package-lock.json"
+    "clean": "rm -rf node_modules/ package-lock.json"
   },
   "repository": {
     "type": "git",

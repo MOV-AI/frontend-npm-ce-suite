@@ -5,6 +5,8 @@
   "main": "./dist/index.js",
   "scripts": {
     "test": "jest",
+    "installDep": "npm ci",
+    "reinstallDep": "npm run clean && npm i",
     "coverage": "npm test -- --coverage",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
