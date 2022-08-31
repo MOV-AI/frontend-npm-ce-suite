@@ -13,6 +13,11 @@ module.exports = {
   devtool: "source-map",
   externals: [nodeExternals()],
   resolve: {
+    alias: {
+      vscode: require.resolve(
+        "@codingame/monaco-languageclient/lib/vscode-compatibility"
+      )
+    },
     extensions: [".js", ".jsx"]
   },
   module: {
