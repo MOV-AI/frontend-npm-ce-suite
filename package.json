@@ -3,6 +3,7 @@
   "private": false,
   "scripts": {
     "clean": "rm -rf node_modules/ package-lock.json dist/",
+    "start": "cd packages/mov-fe-app-ide-ce && npm start",
     "dev": "cd packages/mov-fe-lib-ide && npm run storybook"
   },
   "workspaces": [

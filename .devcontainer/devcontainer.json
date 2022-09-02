@@ -17,7 +17,7 @@
     "SonarSource.sonarlint-vscode"
   ],
   "updateContentCommand": "npx lerna bootstrap",
-  "postCreateCommand": "npx lerna run installDep",
+  "postCreateCommand": "npx lerna exec -- npm i && npx lerna link",
   "remoteUser": "node",
   "runArgs": ["--network=host"],
   "mounts": [

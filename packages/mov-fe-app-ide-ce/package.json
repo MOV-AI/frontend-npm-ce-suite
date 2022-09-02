@@ -1,0 +1,65 @@
+{
+  "name": "@mov-ai/mov-fe-app-ide-ce",
+  "version": "3.1.0-0",
+  "private": false,
+  "dependencies": {
+    "@mov-ai/mov-fe-lib-ide": "*",
+    "@mov-ai/mov-fe-lib-core": "*",
+    "@mov-ai/mov-fe-lib-react": "*",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "GENERATE_SOURCEMAP=false react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "clean": "rm -rf /node_modules package-lock.json"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.6"
+  },
+  "babel": {
+    "sourceType": "unambiguous"
+  },
+  "movai": {
+    "name": "mov-fe-app-ide-ce",
+    "Label": "MOV.AI Flow™",
+    "Type": "application",
+    "Package": "mov-fe-app-ide-ce",
+    "EntryPoint": "index.html",
+    "Description": "Integrated Development Environment",
+    "Icon": "fas fa-code",
+    "Callbacks": [
+      "backend.viewer",
+      "backend.CallbackEditor",
+      "backend.FlowAPI"
+    ],
+    "Configuration": "app-ide-ce",
+    "CustomConfiguration": "app-custom-ide-ce",
+    "Version": "0.0.1",
+    "generateMetadata": true
+  }
+}

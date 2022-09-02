@@ -44,10 +44,7 @@ module.exports = {
               "@babel/plugin-syntax-import-meta",
               "@babel/plugin-proposal-class-properties",
               "@babel/plugin-proposal-json-strings",
-              [
-                "@babel/plugin-transform-runtime",
-                { useESModules: true, helpers: true }
-              ]
+              "@babel/plugin-transform-runtime"
             ]
           }
         }
