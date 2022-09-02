@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Button, Modal } from "@material-ui/core";
-import { Authentication, User } from "@mov-ai/mov-fe-lib-core";
+import { Authentication, User } from "@mov-ai/fe-lib-core";
 import LoginForm from "../LoginForm/LoginForm";
 import LoginPanel from "../LoginForm/LoginPanel";
 import jwtDecode from "jwt-decode";
@@ -14,7 +14,7 @@ export default function withAuthentication(Component, appName) {
     const [state, setState] = useState({
       loggedIn: false,
       hasPermissions: false,
-      currentUser: {}
+      currentUser: {},
     });
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
@@ -25,13 +25,13 @@ export default function withAuthentication(Component, appName) {
       setLoading(true);
       Promise.all([
         Authentication.checkLogin(),
-        new Promise(resolve => setTimeout(resolve, 2000)),
-        user.getCurrentUserWithPermissions()
+        new Promise((resolve) => setTimeout(resolve, 2000)),
+        user.getCurrentUserWithPermissions(),
       ])
         .then(([loggedIn, _, _user]) => {
           const {
             Resources: { Applications: apps = [] },
-            Superuser: isSuperUser
+            Superuser: isSuperUser,
           } = _user;
           const hasPermissions =
             isSuperUser || apps.includes(appName) || !appName;
@@ -43,17 +43,17 @@ export default function withAuthentication(Component, appName) {
           setState({
             loggedIn,
             hasPermissions,
-            currentUser: _user
+            currentUser: _user,
           });
         })
-        .catch(error => {
+        .catch((error) => {
           console.warn("Failed login", error);
           setState({
             loggedIn: false,
-            hasPermissions: false
+            hasPermissions: false,
           });
         })
-        .finally(_ => setLoading(false));
+        .finally((_) => setLoading(false));
     }, []);
 
     /**
@@ -68,8 +68,8 @@ export default function withAuthentication(Component, appName) {
      */
     useEffect(() => {
       Authentication.getProviders()
-        .then(response => setAuthenticationProviders(response.domains))
-        .catch(e =>
+        .then((response) => setAuthenticationProviders(response.domains))
+        .catch((e) =>
           console.log(
             "Error while fetching authentication providers: ",
             e.error
@@ -99,13 +99,13 @@ export default function withAuthentication(Component, appName) {
         const timeOut = setTimeout(
           () =>
             Authentication.refreshTokens()
-              .then(res => {
-                setState(prevState => ({
+              .then((res) => {
+                setState((prevState) => ({
                   ...prevState,
-                  loggedIn: res
+                  loggedIn: res,
                 }));
               })
-              .catch(error =>
+              .catch((error) =>
                 console.log("Error while trying to refresh the tokens", error)
               ),
           timeToRun
@@ -124,7 +124,7 @@ export default function withAuthentication(Component, appName) {
      * handleLogOut - log out the user
      * @param {string} redirect : Redirect URL location
      */
-    const handleLogOut = redirect => {
+    const handleLogOut = (redirect) => {
       Authentication.logout(redirect);
     };
 

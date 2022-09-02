@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useRef, useEffect } from "react";
 import { Typography } from "@material-ui/core";
-import { RobotManager } from "@mov-ai/mov-fe-lib-core";
+import { RobotManager } from "@mov-ai/fe-lib-core";
 import RobotLogModal from "../Modal/RobotLogModal";
 import LogsFilterBar from "./LogsFilterBar/LogsFilterBar";
 import LogsTable from "./LogsTable/LogsTable";
@@ -15,7 +15,7 @@ import {
   DEFAULT_SELECTED_LEVELS,
   DEFAULT_SELECTED_SERVICES,
   ROBOT_LOG_TYPE,
-  SIMPLE_LEVELS_LIST
+  SIMPLE_LEVELS_LIST,
 } from "./utils/Constants";
 import { findsUniqueKey } from "./utils/Utils";
 import useUpdateEffect from "./hooks/useUpdateEffect";
@@ -33,7 +33,7 @@ const DEFAULT_TIMEOUT_IN_MS = 3000;
 const RETRY_IN_MS = 2000;
 const UI_TAG = { key: 0, label: "ui" };
 
-const Logs = props => {
+const Logs = (props) => {
   // Props
   const { advancedMode: initialAdvancedMode, robotsData } = props;
   // Style hook
@@ -104,12 +104,12 @@ const Logs = props => {
   const getSelectedRobots = () => {
     return Object.values(selectedRobotsRef.current)
       .filter(
-        robot =>
+        (robot) =>
           robot.isSelected && // Get selected robots only
           robot.name && // Get only robots with name
           robot.robotState !== ROBOT_STATES.OFFLINE // Get only robots online
       )
-      .map(robot => robot.name);
+      .map((robot) => robot.name);
   };
 
   /**
@@ -122,7 +122,7 @@ const Logs = props => {
   /**
    * Get robots log data
    */
-  const getRobotLogData = robots => {
+  const getRobotLogData = (robots) => {
     // If component is no longer mounted
     if (!isMounted.current) return;
     // If list of selected robot is empty : clear logs data and stop loader
@@ -141,14 +141,14 @@ const Logs = props => {
       message: searchMessage,
       date: { from: getFromDate(), to: getToDate() },
       robot: { selected: robots },
-      limit: limit
+      limit: limit,
     };
 
     const requestTime = new Date().getTime();
     clearTimeout(getLogsTimeoutRef.current);
     RobotManager.getLogs(queryParams)
-      .then(response => {
-        setLogsData(prevState => {
+      .then((response) => {
+        setLogsData((prevState) => {
           const oldLogs = prevState || [];
           const newLogs = response?.data || [];
           return [...oldLogs, ...newLogs];
@@ -159,14 +159,14 @@ const Logs = props => {
         // Doesn't enqueue next request if the 'selectedToDate' inserted manually by the user is before now
         return !(selectedToDate && selectedToDate < requestTime);
       })
-      .catch(err => {
+      .catch((err) => {
         // Add more time for the next request if it fails
         console.warn("Failed logs request", err);
         requestTimeout.current += RETRY_IN_MS;
         // Enqueue next request
         return true;
       })
-      .then(enqueueNextRequest => {
+      .then((enqueueNextRequest) => {
         setLoading(false);
         clearTimeout(getLogsTimeoutRef.current);
         if (!enqueueNextRequest) return;
@@ -179,7 +179,7 @@ const Logs = props => {
   /**
    * Get logs
    */
-  const getLogs = async keepLoading => {
+  const getLogs = async (keepLoading) => {
     if (!isMounted.current) return;
     // Get selected and online robots
     const validRobots = getSelectedRobots();
@@ -228,13 +228,13 @@ const Logs = props => {
   // On change robots data
   useEffect(() => {
     // New robots added, will be added to the selector list
-    setSelectedRobots(prevState => {
+    setSelectedRobots((prevState) => {
       const newRobots = { ...prevState };
-      robotsData.forEach(robot => {
+      robotsData.forEach((robot) => {
         const id = robot.id;
         newRobots[id] = {
           ...robot,
-          isSelected: prevState[id]?.isSelected ?? true
+          isSelected: prevState[id]?.isSelected ?? true,
         };
       });
 
@@ -269,14 +269,14 @@ const Logs = props => {
    * @param {string} robotId : Robot ID to toggle select state
    */
   const onChangeRobotSelection = useCallback(
-    robotId => {
-      setSelectedRobots(prevState => {
+    (robotId) => {
+      setSelectedRobots((prevState) => {
         const newRobots = {
           ...prevState,
           [robotId]: {
             ...prevState[robotId],
-            isSelected: !prevState[robotId].isSelected
-          }
+            isSelected: !prevState[robotId].isSelected,
+          },
         };
         selectedRobotsRef.current = newRobots;
         return newRobots;
@@ -291,28 +291,28 @@ const Logs = props => {
    * On change message from filter
    * @param {string} text : Search text
    */
-  const onChangeMessage = useCallback(text => {
+  const onChangeMessage = useCallback((text) => {
     setSearchMessage(text);
   }, []);
 
   /**
    * On change levels from filter
    */
-  const onChangeLevels = useCallback(event => {
+  const onChangeLevels = useCallback((event) => {
     setLevels(event.target.value);
   }, []);
 
   /**
    * On change selected services from filter
    */
-  const onChangeServices = useCallback(event => {
+  const onChangeServices = useCallback((event) => {
     setSelectedService(event.target.value);
   }, []);
 
   /**
    * On change limit from filter
    */
-  const onChangeLimit = useCallback(event => {
+  const onChangeLimit = useCallback((event) => {
     let _limit = DEFAULT_LIMIT;
     if (event.target.value !== "") _limit = event.target.value;
     setLimit(_limit);
@@ -321,9 +321,9 @@ const Logs = props => {
   /**
    * On change columns from filter
    */
-  const onChangeColumns = useCallback(event => {
+  const onChangeColumns = useCallback((event) => {
     // make sure columns are always with the same order
-    const newColumns = Object.keys(COLUMN_LIST).filter(col =>
+    const newColumns = Object.keys(COLUMN_LIST).filter((col) =>
       event.target.value.includes(col)
     );
     setColumns(newColumns);
@@ -334,8 +334,8 @@ const Logs = props => {
    */
   const onChangeDate = useCallback((newDate, keyToChange) => {
     const setDate = {
-      [DATE_KEY_OPTION.FROM]: date => setSelectedFromDate(date),
-      [DATE_KEY_OPTION.TO]: date => setSelectedToDate(date)
+      [DATE_KEY_OPTION.FROM]: (date) => setSelectedFromDate(date),
+      [DATE_KEY_OPTION.TO]: (date) => setSelectedToDate(date),
     };
     lastRequestTimeRef.current = null;
     setDate[keyToChange](newDate);
@@ -345,7 +345,7 @@ const Logs = props => {
    * Set simple/advanced mode
    */
   const onToggleAdvancedMode = useCallback(() => {
-    setAdvancedMode(prevState => {
+    setAdvancedMode((prevState) => {
       const newMode = !prevState;
       setTags(newMode ? [] : [UI_TAG]);
       setLevels(DEFAULT_SELECTED_LEVELS);
@@ -357,17 +357,17 @@ const Logs = props => {
   /**
    * On add tag from filter
    */
-  const addTag = useCallback(tagText => {
-    setTags(prevState => {
-      const alreadyExists = prevState.find(elem => elem.label === tagText);
+  const addTag = useCallback((tagText) => {
+    setTags((prevState) => {
+      const alreadyExists = prevState.find((elem) => elem.label === tagText);
       // Don't add tag if it's empty or duplicate
       if (tagText !== "" && !alreadyExists) {
         return [
           ...prevState,
           {
             key: findsUniqueKey(prevState, "key"),
-            label: tagText
-          }
+            label: tagText,
+          },
         ];
       }
       return prevState;
@@ -377,9 +377,9 @@ const Logs = props => {
   /**
    * On delete tag from filter
    */
-  const deleteTag = useCallback(tagToDelete => {
-    setTags(prevState => {
-      return prevState.filter(tag => tag.key !== tagToDelete.key);
+  const deleteTag = useCallback((tagToDelete) => {
+    setTags((prevState) => {
+      return prevState.filter((tag) => tag.key !== tagToDelete.key);
     });
   }, []);
 
@@ -392,7 +392,7 @@ const Logs = props => {
   /**
    * Open log details
    */
-  const openLogDetails = useCallback(log => {
+  const openLogDetails = useCallback((log) => {
     logModalRef.current.open(log.rowData);
   }, []);
 

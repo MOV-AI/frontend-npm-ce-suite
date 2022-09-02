@@ -5,7 +5,7 @@ import {
   EMPTY_FUNCTION,
   SET_WS_EVENTS,
   TIME_TO_OFFLINE,
-  WS_EVENT_TYPES
+  WS_EVENT_TYPES,
 } from "../Utils/constants";
 import Robot from "./Robot";
 import Rest from "../Rest/Rest";
@@ -15,7 +15,7 @@ import {
   getRequestMessage,
   getRequestRobots,
   getRequestService,
-  getRequestTags
+  getRequestTags,
 } from "./Utils/Utils";
 import {
   CachedRobots,
@@ -24,7 +24,7 @@ import {
   RobotModel,
   RobotTimeout,
   SubscriptionManager,
-  UpdateRobotParam
+  UpdateRobotParam,
 } from "../../models";
 
 /**
@@ -98,13 +98,13 @@ class RobotManager {
     this.isDataLoaded = true;
     if (data.value) {
       this.cachedRobots = data.value.Robot;
-      Object.keys(this.cachedRobots).forEach(id => {
+      Object.keys(this.cachedRobots).forEach((id) => {
         this.robots[id] = new ProtectedRobot(id, this.cachedRobots[id]);
         this.cachedRobots[id].Online = true;
       });
     }
     // Call subscribed onLoad functions
-    Object.keys(this.subscribedOnDataLoad).forEach(key => {
+    Object.keys(this.subscribedOnDataLoad).forEach((key) => {
       this.subscribedOnDataLoad[key].send(this.cachedRobots);
     });
   };
@@ -122,14 +122,14 @@ class RobotManager {
 
     // Set changed robots
     const changedRobots: CachedRobots = {};
-    Object.keys(robots).forEach(robotId => {
+    Object.keys(robots).forEach((robotId) => {
       const robot = this.robots[robotId];
       const changedKeys = robot.getChangedKeysAndResetData();
       if (changedKeys.length)
         changedRobots[robotId] = this.cachedRobots[robotId];
     });
     // Call subscribed onChange functions
-    Object.keys(this.subscribedOnDataChange).forEach(key => {
+    Object.keys(this.subscribedOnDataChange).forEach((key) => {
       if (Object.keys(changedRobots).length)
         this.subscribedOnDataChange[key].send(changedRobots, dataEventType);
     });
@@ -174,6 +174,10 @@ class RobotManager {
       this.subscribedOnDataLoad[subscriptionId] = { send: onDataLoaded };
     }
     return this.cachedRobots;
+  }
+
+  testMethod() {
+    return 123;
   }
 
   /**
@@ -234,7 +238,7 @@ class RobotManager {
       this.cachedRobots[id].Online = robot.updateStatus();
       robot.sendUpdates(WS_EVENT_TYPES.SET);
       // Call subscribed onChange functions
-      Object.keys(this.subscribedOnDataChange).forEach(key => {
+      Object.keys(this.subscribedOnDataChange).forEach((key) => {
         const changedKeys = robot.getChangedKeysAndResetData();
         if (changedKeys.length)
           this.subscribedOnDataChange[key].send(robot.data, WS_EVENT_TYPES.SET);
@@ -248,7 +252,7 @@ class RobotManager {
    * @param {string} event : Event type ("set", "hset", "del", "hdel")
    */
   private applyChanges = (robots: CachedRobots, event: string) => {
-    Object.keys(robots).forEach(robotId => {
+    Object.keys(robots).forEach((robotId) => {
       const obj: RobotModel = robots[robotId];
       // Set robot object if not yet created
       if (!this.robots[robotId]) {
@@ -258,7 +262,7 @@ class RobotManager {
       const robot = this.robots[robotId];
       const cachedRobot = this.cachedRobots[robotId];
       // Update cached and robot data attribute
-      Object.keys(obj).forEach(key => {
+      Object.keys(obj).forEach((key) => {
         const objKey = key as keyof RobotModel;
         const value: any = obj[objKey];
         const prevCachedValue = cachedRobot[objKey];

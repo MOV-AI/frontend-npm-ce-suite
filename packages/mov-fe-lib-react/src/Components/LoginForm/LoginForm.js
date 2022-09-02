@@ -10,7 +10,7 @@ import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import { withStyles } from "@material-ui/core/styles";
 import { styles } from "./style";
-import { Authentication } from "@mov-ai/mov-fe-lib-core";
+import { Authentication } from "@mov-ai/fe-lib-core";
 import PropTypes from "prop-types";
 import LoginFormAdvanced from "./LoginFormAdvanced";
 import { withTranslation } from "react-i18next";
@@ -27,7 +27,7 @@ class LoginForm extends Component {
     formErrors: "",
     remember: false,
     capsLockOn: false,
-    selectedProvider: Authentication.DEFAULT_PROVIDER
+    selectedProvider: Authentication.DEFAULT_PROVIDER,
   };
 
   //========================================================================================
@@ -45,7 +45,7 @@ class LoginForm extends Component {
     this.setState({
       selectedProvider:
         localStorage.getItem(SELECTED_DOMAIN_KEY) ||
-        Authentication.DEFAULT_PROVIDER
+        Authentication.DEFAULT_PROVIDER,
     });
   }
 
@@ -65,7 +65,7 @@ class LoginForm extends Component {
       username,
       password,
       remember,
-      selectedProvider
+      selectedProvider,
     });
   };
 
@@ -73,7 +73,7 @@ class LoginForm extends Component {
    * Check if caps lock is on
    * @param {Event} event : On key up event
    */
-  checkCapsLock = event => {
+  checkCapsLock = (event) => {
     if (event.key === "CapsLock" && this.state.capsLockOn)
       this.setState({ capsLockOn: false });
     else {
@@ -82,9 +82,9 @@ class LoginForm extends Component {
     }
   };
 
-  handleProviderChange = e => {
+  handleProviderChange = (e) => {
     this.setState({
-      selectedProvider: e.target.value
+      selectedProvider: e.target.value,
     });
     localStorage.setItem(SELECTED_DOMAIN_KEY, e.target.value);
   };
@@ -99,7 +99,7 @@ class LoginForm extends Component {
    * On change username
    * @param {Event} event : On change event
    */
-  onChangeUsername = event => {
+  onChangeUsername = (event) => {
     const username = event.target.value || "";
     const errorMessage = !username ? this.props.t("UsernameRequired") : "";
     this.state.username && this.props.onChanges();
@@ -110,13 +110,13 @@ class LoginForm extends Component {
    * On change password
    * @param {Event} event : On change event
    */
-  onChangePassword = event => {
+  onChangePassword = (event) => {
     const password = event.target.value || "";
     const errorMessage = !password ? this.props.t("PasswordRequired") : "";
     this.state.password && this.props.onChanges();
     this.setState({
       password,
-      formErrors: errorMessage
+      formErrors: errorMessage,
     });
   };
 
@@ -124,7 +124,7 @@ class LoginForm extends Component {
    * On key up password input
    * @param {Event} event : On keyUp event
    */
-  onKeyUpPassword = event => {
+  onKeyUpPassword = (event) => {
     this.checkCapsLock(event);
     if (event.key === "Enter") {
       this.sendCreds();
@@ -133,7 +133,7 @@ class LoginForm extends Component {
 
   hasMultipleDomains = () =>
     this.props.domains?.length > 1 &&
-    this.props.domains.some(ap => ap != Authentication.DEFAULT_PROVIDER);
+    this.props.domains.some((ap) => ap != Authentication.DEFAULT_PROVIDER);
 
   //========================================================================================
   /*                                                                                      *
@@ -243,7 +243,7 @@ LoginForm.propTypes = {
   logo: PropTypes.any, // expects a svg element
   permissionErrors: PropTypes.string,
   onLoginSubmit: PropTypes.func,
-  onChanges: PropTypes.func
+  onChanges: PropTypes.func,
 };
 
 LoginForm.defaultProps = {
@@ -251,7 +251,7 @@ LoginForm.defaultProps = {
   logo: defaultLogo,
   permissionErrors: "",
   onLoginSubmit: EMPTY_FUNCTION,
-  onChanges: EMPTY_FUNCTION
+  onChanges: EMPTY_FUNCTION,
 };
 
 export default withTranslation()(

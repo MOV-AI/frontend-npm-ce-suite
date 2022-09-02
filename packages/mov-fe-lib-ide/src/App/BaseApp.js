@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Style } from "@mov-ai/mov-fe-lib-react";
+import { Style } from "@mov-ai/fe-lib-react";
 import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import DocManager from "../plugins/DocManager/DocManager";

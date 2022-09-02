@@ -6,7 +6,7 @@ import {
   MonacoLanguageClient,
   MonacoServices,
 } from "@codingame/monaco-languageclient";
-import { Rest } from "@mov-ai/mov-fe-lib-core";
+import { Rest } from "@mov-ai/fe-lib-core";
 import { languages, editor as monacoEditor } from "monaco-editor";
 import normalizeUrl from "normalize-url";
 import { useCallback, useEffect } from "react";

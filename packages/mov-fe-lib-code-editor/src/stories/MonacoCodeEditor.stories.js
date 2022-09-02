@@ -1,4 +1,4 @@
-import { withAuthentication } from "@mov-ai/mov-fe-lib-react";
+import { withAuthentication } from "@mov-ai/fe-lib-react";
 import React from "react";
 import withMock from "storybook-addon-mock";
 import MonacoCodeEditor from "../components/MonacoCodeEditor/MonacoCodeEditor.js";

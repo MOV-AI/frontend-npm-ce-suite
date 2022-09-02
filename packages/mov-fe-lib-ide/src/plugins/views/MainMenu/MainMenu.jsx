@@ -1,11 +1,7 @@
 import React, { useState, useEffect, useCallback, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import {
-  VerticalBar,
-  ProfileMenu,
-  ContextMenu
-} from "@mov-ai/mov-fe-lib-react";
+import { VerticalBar, ProfileMenu, ContextMenu } from "@mov-ai/fe-lib-react";
 import TextSnippetIcon from "@material-ui/icons/Description";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import { Tooltip } from "@material-ui/core";

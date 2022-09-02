@@ -1,4 +1,4 @@
-import { User } from "@mov-ai/mov-fe-lib-core";
+import { User } from "@mov-ai/fe-lib-core";
 import { DOCK_POSITIONS, DEFAULT_LAYOUT, DEFAULT_TABS } from "./Constants";
 import LocalStorage from "./LocalStorage";
 

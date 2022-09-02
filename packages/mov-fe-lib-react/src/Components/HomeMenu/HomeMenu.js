@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import { Button, Divider, IconButton, Typography } from "@material-ui/core";
-import { User, Utils } from "@mov-ai/mov-fe-lib-core";
+import { User, Utils } from "@mov-ai/fe-lib-core";
 import AppsIcon from "@material-ui/icons/Apps";
 import { HomeMenuPopperStyles } from "./styles";
 import HomeMenuSkeleton from "./HomeMenuSkeleton";
@@ -29,10 +29,10 @@ const HomeMenuPopper = () => {
   useEffect(() => {
     currentUser
       .getAllApps()
-      .then(res => {
+      .then((res) => {
         res.success && setCurrentApps(res.result);
       })
-      .catch(err => {
+      .catch((err) => {
         setErrorMessage(err.statusText);
       });
   }, [currentUser]);
@@ -69,15 +69,15 @@ const HomeMenuPopper = () => {
    *                                        RENDERS                                       *
    *                                                                                      */
   //========================================================================================
-  const renderApplications = apps => {
-    return apps.map(app => (
+  const renderApplications = (apps) => {
+    return apps.map((app) => (
       <Button
         data-testid="input_application"
         key={app.URL}
         size="large"
         color="primary"
         className={classes.menuButton}
-        onClick={event => onAppClick(event, app)}
+        onClick={(event) => onAppClick(event, app)}
       >
         <div className={classes.appTextArea}>
           <div className={`${classes.appIcon} ${app.Icon}`} />
@@ -114,7 +114,7 @@ const HomeMenuPopper = () => {
       const arrayOfExternalApps = [];
       const arrayOfLayouts = [];
 
-      currentApps.forEach(app => {
+      currentApps.forEach((app) => {
         const appType = app.Type;
 
         if (appType === APP_TYPES.APPLICATION && app.Label !== LAUNCHER_APP)

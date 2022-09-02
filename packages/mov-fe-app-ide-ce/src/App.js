@@ -21,17 +21,26 @@ import {
   HomeTabPlugin,
   ShortcutsPlugin,
   getShortcutsTab,
-} from "@mov-ai/mov-fe-lib-ide";
+} from "@mov-ai/fe-lib-ide";
+import { RobotManager } from "@mov-ai/fe-lib-core";
 
 import KeyboardIcon from "@material-ui/icons/Keyboard";
 import HomeIcon from "@material-ui/icons/Home";
 
 const AppCE = (props) => {
+  const robotManager = React.useMemo(() => new RobotManager(), []);
+
   //========================================================================================
   /*                                                                                      *
    *                                    React Lifecycle                                   *
    *                                                                                      */
   //========================================================================================
+
+  useEffect(() => {
+    const robots = robotManager.getAll();
+    const test = robotManager.testMethod && robotManager.testMethod();
+    console.log("debug robots", robots, test);
+  }, [robotManager]);
 
   // On component did mount
   useEffect(() => {

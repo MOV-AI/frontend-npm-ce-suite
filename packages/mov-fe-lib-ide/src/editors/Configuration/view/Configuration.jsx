@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
-import { MonacoCodeEditor } from "@mov-ai/mov-fe-lib-code-editor";
+import { MonacoCodeEditor } from "@mov-ai/fe-lib-code-editor";
 import { AppBar, Toolbar } from "@material-ui/core";
 import { ToggleButton, ToggleButtonGroup } from "@material-ui/lab";
 import { useTheme } from "@material-ui/core/styles";

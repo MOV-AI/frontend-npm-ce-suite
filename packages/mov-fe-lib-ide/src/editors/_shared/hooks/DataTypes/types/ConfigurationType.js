@@ -1,4 +1,4 @@
-import { Rest } from "@mov-ai/mov-fe-lib-core";
+import { Rest } from "@mov-ai/fe-lib-core";
 import DataType from "../AbstractDataType";
 
 class ConfigurationType extends DataType {

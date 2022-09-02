@@ -1,10 +1,10 @@
 import React from "react";
 import App from "./App";
-import { withDefaults } from "@mov-ai/mov-fe-lib-react";
+import { withDefaults } from "@mov-ai/fe-lib-react";
 import "./App.css";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n/i18n";
-import { ThemeProvider, ApplicationTheme } from "@mov-ai/mov-fe-lib-ide";
+import { ThemeProvider, ApplicationTheme } from "@mov-ai/fe-lib-ide";
 
 // import Backend from 'i18next-xhr-backend';
 // import LanguageDetector from 'i18next-browser-languagedetector';

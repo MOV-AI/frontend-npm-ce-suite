@@ -1,4 +1,4 @@
-import { Document } from "@mov-ai/mov-fe-lib-core";
+import { Document } from "@mov-ai/fe-lib-core";
 import i18n from "../../i18n/i18n";
 import {
   PLUGINS,

@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import hotkeys from "hotkeys-js";
-import { SelectScopeModal } from "@mov-ai/mov-fe-lib-react";
+import { SelectScopeModal } from "@mov-ai/fe-lib-react";
 import i18n from "../../i18n/i18n";
 import IDEPlugin from "../../engine/IDEPlugin/IDEPlugin";
 import { randomId } from "../../utils/Utils";

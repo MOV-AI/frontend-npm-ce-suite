@@ -29,7 +29,7 @@ Its main use will be to build Mov.AI applications.
 
    - Goto your project
    - Install package:
-     - `npm install @mov-ai/mov-fe-lib-core`
+     - `npm install @mov-ai/fe-lib-core`
 
 2. Update package
    - `npm update`

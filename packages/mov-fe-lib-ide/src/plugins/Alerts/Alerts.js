@@ -1,4 +1,4 @@
-import { snackbar } from "@mov-ai/mov-fe-lib-react";
+import { snackbar } from "@mov-ai/fe-lib-react";
 import { PLUGINS } from "../../utils/Constants";
 import IDEPlugin from "../../engine/IDEPlugin/IDEPlugin";
 

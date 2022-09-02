@@ -1,5 +1,5 @@
-import { i18nHelper } from "@mov-ai/mov-fe-lib-react";
-import { Translations as ideCeTranslations } from "@mov-ai/mov-fe-lib-ide";
+import { i18nHelper } from "@mov-ai/fe-lib-react";
+import { Translations as ideCeTranslations } from "@mov-ai/fe-lib-ide";
 import translationEN from "./locales/en/translation.json";
 import translationPT from "./locales/pt/translation.json";
 

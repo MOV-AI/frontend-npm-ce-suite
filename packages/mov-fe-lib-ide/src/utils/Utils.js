@@ -5,7 +5,7 @@ import CodeIcon from "@material-ui/icons/Code";
 import DescriptionIcon from "@material-ui/icons/Description";
 import DeviceHubIcon from "@material-ui/icons/DeviceHub";
 import KeyboardIcon from "@material-ui/icons/Keyboard";
-import { Utils } from "@mov-ai/mov-fe-lib-core";
+import { Utils } from "@mov-ai/fe-lib-core";
 import movaiIcon from "../Branding/movai-logo-white.png";
 import { ERROR_MESSAGES } from "./Messages";
 import { GLOBAL_WORKSPACE } from "./Constants";

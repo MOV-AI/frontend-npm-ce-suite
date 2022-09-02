@@ -1,5 +1,5 @@
 {
-  "name": "@mov-ai/mov-fe-lib-core",
+  "name": "@mov-ai/fe-lib-core",
   "version": "1.1.1-12",
   "description": "The Mov.AI's core frontend library.",
   "publishConfig": {

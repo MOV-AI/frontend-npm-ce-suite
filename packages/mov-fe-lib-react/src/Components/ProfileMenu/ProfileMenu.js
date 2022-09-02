@@ -3,7 +3,7 @@ import React, {
   useEffect,
   useCallback,
   useMemo,
-  useRef
+  useRef,
 } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
@@ -13,12 +13,12 @@ import PropTypes from "prop-types";
 import Toggle from "../Toggle";
 import { profileMenuStyles } from "./styles";
 import Divider from "@material-ui/core/Divider";
-import { User } from "@mov-ai/mov-fe-lib-core";
+import { User } from "@mov-ai/fe-lib-core";
 import { Typography, Tooltip } from "@material-ui/core";
 import i18n from "../../i18n/i18n.js";
 import ResetPasswordModal from "./ResetPassword";
 
-const ProfileMenu = props => {
+const ProfileMenu = (props) => {
   // State hooks
   const [anchorEl, setAnchorEl] = useState(null);
   const [username, setUsername] = useState("");
@@ -36,7 +36,7 @@ const ProfileMenu = props => {
     isDarkTheme,
     handleLogout,
     logoutLabel,
-    version
+    version,
   } = props;
 
   //========================================================================================
@@ -49,7 +49,7 @@ const ProfileMenu = props => {
    * Handle click to open ProfileMenu
    * @param {Event} event : Click event
    */
-  const handleClick = useCallback(event => {
+  const handleClick = useCallback((event) => {
     setAnchorEl(event.currentTarget);
   }, []);
 
@@ -179,7 +179,7 @@ ProfileMenu.propTypes = {
   extraItems: PropTypes.array,
   isDarkTheme: PropTypes.bool,
   handleLogout: PropTypes.func,
-  handleToggleTheme: PropTypes.func
+  handleToggleTheme: PropTypes.func,
 };
 
 ProfileMenu.defaultProps = {
@@ -189,7 +189,7 @@ ProfileMenu.defaultProps = {
   version: "",
   extraItems: [],
   isDarkTheme: true,
-  handleLogout: () => console.log("logout")
+  handleLogout: () => console.log("logout"),
 };
 
 export default ProfileMenu;

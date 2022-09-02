@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, within } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import LoginForm from "./LoginForm";
-import { Authentication } from "@mov-ai/mov-fe-lib-core";
+import { Authentication } from "@mov-ai/fe-lib-core";
 
 const SOME_DOMAIN_NAME = "OTHER_DOMAIN";
 const SINGLE_DOMAINS = [Authentication.DEFAULT_PROVIDER];
@@ -52,7 +52,7 @@ describe("Domain Selector", () => {
     );
 
     const domainSelector = getByRole("button", {
-      name: Authentication.DEFAULT_PROVIDER
+      name: Authentication.DEFAULT_PROVIDER,
     });
     fireEvent.mouseDown(domainSelector);
 
@@ -78,12 +78,12 @@ describe("Selected Domain", () => {
 
     const usernameInput = getByTestId("input_username");
     fireEvent.change(usernameInput, {
-      target: { value: "username" }
+      target: { value: "username" },
     });
 
     const password = getByTestId("input_password");
     fireEvent.change(password, {
-      target: { value: "notempty" }
+      target: { value: "notempty" },
     });
 
     const submitBtn = getByTestId("input_login");
@@ -91,7 +91,7 @@ describe("Selected Domain", () => {
 
     expect(handleSubmit).toBeCalledWith(
       expect.objectContaining({
-        selectedProvider: Authentication.DEFAULT_PROVIDER
+        selectedProvider: Authentication.DEFAULT_PROVIDER,
       })
     );
   });
@@ -117,7 +117,7 @@ describe("Handle changes", () => {
     expect(domainSelector).toBeInTheDocument();
 
     fireEvent.select(domainSelector, {
-      target: { value: SOME_DOMAIN_NAME }
+      target: { value: SOME_DOMAIN_NAME },
     });
 
     expect(domainSelector.value).toBe(SOME_DOMAIN_NAME);
@@ -133,7 +133,7 @@ describe("Submit", () => {
 
     const usernameInput = getByTestId("input_username");
     fireEvent.change(usernameInput, {
-      target: { value: "" }
+      target: { value: "" },
     });
 
     const submitBtn = getByTestId("input_login");
@@ -150,7 +150,7 @@ describe("Submit", () => {
 
     const passwordInput = getByTestId("input_password");
     fireEvent.change(passwordInput, {
-      target: { value: "" }
+      target: { value: "" },
     });
 
     const submitBtn = getByTestId("input_login");
@@ -169,12 +169,12 @@ describe("Submit", () => {
 
     const usernameInput = getByTestId("input_username");
     fireEvent.change(usernameInput, {
-      target: { value: username }
+      target: { value: username },
     });
 
     const passwordInput = getByTestId("input_password");
     fireEvent.change(passwordInput, {
-      target: { value: password }
+      target: { value: password },
     });
 
     const submitBtn = getByTestId("input_login");
@@ -184,7 +184,7 @@ describe("Submit", () => {
       expect.objectContaining({
         username,
         password,
-        selectedProvider: Authentication.DEFAULT_PROVIDER
+        selectedProvider: Authentication.DEFAULT_PROVIDER,
       })
     );
   });

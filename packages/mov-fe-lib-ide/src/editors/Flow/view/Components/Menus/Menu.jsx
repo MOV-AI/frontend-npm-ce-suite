@@ -14,7 +14,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import Add from "@material-ui/icons/Add";
-import { Utils } from "@mov-ai/mov-fe-lib-core";
+import { Utils } from "@mov-ai/fe-lib-core";
 import Model from "../../../model/Flow";
 import useDataSubscriber from "../../../../../plugins/DocManager/useDataSubscriber";
 

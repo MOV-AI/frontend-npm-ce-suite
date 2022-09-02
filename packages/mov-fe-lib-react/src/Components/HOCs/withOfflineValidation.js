@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { MasterDB } from "@mov-ai/mov-fe-lib-core";
+import { MasterDB } from "@mov-ai/fe-lib-core";
 import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/styles";
 import { Button } from "@material-ui/core";
 
-const useStyles = makeStyles(theme => ({
-  alert: { position: "absolute", bottom: 0, width: "100%" }
+const useStyles = makeStyles((theme) => ({
+  alert: { position: "absolute", bottom: 0, width: "100%" },
 }));
 
 export default function withOfflineValidation(Component) {

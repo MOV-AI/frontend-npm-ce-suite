@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Style, withDefaults } from "@mov-ai/mov-fe-lib-react";
+import { Style, withDefaults } from "@mov-ai/fe-lib-react";
 // Base App
 import BaseApp, { installEditor, installTool } from "../App/BaseApp";
 // Editors

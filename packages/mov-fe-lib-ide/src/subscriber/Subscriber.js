@@ -1,4 +1,4 @@
-import { MasterDB } from "@mov-ai/mov-fe-lib-core";
+import { MasterDB } from "@mov-ai/fe-lib-core";
 
 class Subscriber {
   constructor({ pattern, _onLoad, _onUpdate }) {

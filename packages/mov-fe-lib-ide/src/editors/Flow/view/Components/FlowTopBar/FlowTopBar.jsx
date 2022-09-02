@@ -22,7 +22,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import StopIcon from "@material-ui/icons/Stop";
-import { RobotManager } from "@mov-ai/mov-fe-lib-core";
+import { RobotManager } from "@mov-ai/fe-lib-core";
 import { ToggleButton, ToggleButtonGroup } from "@material-ui/lab";
 import Workspace from "../../../../../utils/Workspace";
 import {
