@@ -1,6 +1,7 @@
 {
   "name": "@mov-ai/mov-fe-ce-suite",
-  "private": true,
+  "version": "3.1.0-0",
+  "private": false,
   "scripts": {
     "clean": "rm -rf node_modules/ package-lock.json dist/",
     "start": "cd packages/mov-fe-app-ide-ce && npm start",

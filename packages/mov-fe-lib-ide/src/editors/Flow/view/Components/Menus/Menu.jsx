@@ -22,12 +22,9 @@ import { ERROR_MESSAGES } from "../../../../../utils/Messages";
 import {
   DEFAULT_KEY_VALUE_DATA,
   DATA_TYPES,
-  PLUGINS,
-  TABLE_KEYS_NAMES,
-  DIALOG_TITLE
+  PLUGINS
 } from "../../../../../utils/Constants";
 import { validateDocumentName } from "../../../../../utils/Utils";
-import ParametersEditorDialog from "../../../../_shared/KeyValueTable/ParametersEditorDialog";
 import DetailsMenu from "../../../../_shared/DetailsMenu/DetailsMenu";
 import TableKeyValue from "./sub-components/TableKeyValue";
 import GroupItem from "./sub-components/GroupItem";

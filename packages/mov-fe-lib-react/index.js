@@ -36,11 +36,6 @@ import withDefaults from "./src/Components/HOCs/withDefaults";
 import { Translations } from "./src/i18n/locales/";
 import { i18nHelper } from "./src/i18n/i18nHelper";
 
-require("react-dom");
-console.log("in lib-react");
-window.ReactLibReact = require("react");
-console.log("R1 === R2", window.React1 === window.ReactLibReact, window.React1);
-
 export {
   withOfflineValidation,
   withAuthentication,
