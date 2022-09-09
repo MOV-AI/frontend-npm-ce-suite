@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve("./"),
     filename: "dist/index.js",
     library: "MovaiReact",
-    libraryTarget: "umd"
+    libraryTarget: "umd",
   },
   target: "web",
   devtool: "source-map",
@@ -28,15 +28,15 @@ module.exports = {
               "@babel/plugin-proposal-json-strings",
               [
                 "@babel/plugin-transform-runtime",
-                { useESModules: true, helpers: true }
-              ]
-            ]
-          }
-        }
+                { useESModules: true, helpers: true },
+              ],
+            ],
+          },
+        },
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.svg$/,
@@ -44,17 +44,17 @@ module.exports = {
           {
             loader: "svg-url-loader",
             options: {
-              limit: 10000
-            }
-          }
-        ]
+              limit: 10000,
+            },
+          },
+        ],
       },
       {
         test: /\.(jpg|png)$/,
         use: {
-          loader: "url-loader"
-        }
-      }
-    ]
-  }
+          loader: "url-loader",
+        },
+      },
+    ],
+  },
 };

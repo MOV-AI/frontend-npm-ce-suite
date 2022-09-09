@@ -74,8 +74,6 @@
     "monaco-editor-webpack-plugin": "^7.0.1",
     "node-sass": "^7.0.1",
     "path": "^0.12.7",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
     "sass-loader": "^12.1.0",
     "storybook-addon-mock": "^2.4.1",
     "style-loader": "^3.3.0",

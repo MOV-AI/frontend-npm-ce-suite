@@ -61,5 +61,10 @@ export { i18n, Translations };
 export { useDataTypes, useDataSubscriber, usePluginMethods };
 export { openTool };
 
+require("react-dom");
+console.log("in Lib-ide");
+window.ReactLibIDE = require("react");
+console.log("R1 === R2", window.React1 === window.ReactLibIDE, window.React1);
+
 // Export editor's shared components
 export * from "./src/editors/_shared";
