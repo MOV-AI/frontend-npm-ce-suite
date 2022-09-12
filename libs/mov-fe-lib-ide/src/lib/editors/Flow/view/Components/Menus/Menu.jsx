@@ -167,7 +167,11 @@ const Menu = ({
       if (oldName === "") {
         model.current.addParameter(newData.name, newData);
       } else {
-        model.current.updateKeyValueItem("parameters", newData, oldName);
+        model.current.updateKeyValueItem(
+          TABLE_KEYS_NAMES.PARAMETERS,
+          newData,
+          oldName
+        );
       }
     },
     [model]
@@ -176,11 +180,11 @@ const Menu = ({
   /**
    * Open dialog to edit/add new Parameter
    * @param {string} dataId : Unique identifier of item (undefined when not created yet)
-   * @param {ReactComponent} DialogComponent : Dialog component to render
    */
   const handleParameterDialog = useCallback(
     (dataId) => {
       const obj = model.current.getParameter(dataId) || DEFAULT_KEY_VALUE_DATA;
+      const paramType = t(DIALOG_TITLE.PARAMETERS);
 
       const args = {
         onSubmit: (formData) => handleSubmitParameter(obj.name, formData),
@@ -198,7 +202,7 @@ const Menu = ({
         ParameterEditorDialog
       );
     },
-    [model, call, validateParamName, handleSubmitParameter, t]
+    [model, validateParamName, handleSubmitParameter, call, t]
   );
 
   //========================================================================================
