@@ -6,7 +6,8 @@ MOVAI-CE Suite is a monorepo containing all the public libraries to use in the c
 
 ## Build and run instructions
 
-[Follow the Readme file to build and run Nx projects](README_Nx.md)
+To run locally, npm ci and npx serve.
+[For more details check this doc](README_Nx.md)
 
 ## Current status
 
