@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import { ContextMenu } from "@mov-ai/mov-fe-lib-react";
+import { ContextMenu } from "@mov-ai/fe-lib-react";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
 import AddIcon from "@material-ui/icons/Add";

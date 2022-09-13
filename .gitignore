@@ -3,7 +3,10 @@ dist
 .idea
 
 .cache
-packages/remixapp/build
-packages/remixapp/public/build
-.env
+packages/mov-fe-app-ide-ce/build
+packages/mov-fe-app-ide-ce/public/build
+
+packages/mov-fe-lib-ide/*.woff2
+packages/mov-fe-lib-ide/*.woff
+packages/mov-fe-lib-ide/*.ttf
 

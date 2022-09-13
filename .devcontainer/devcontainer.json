@@ -16,7 +16,7 @@
     "Makogan.hermes-comments",
     "SonarSource.sonarlint-vscode"
   ],
-  "postCreateCommand": "npm ci",
+  "updateContentCommand": "npx lerna bootstrap && npx lerna link",
   "remoteUser": "node",
   "runArgs": ["--network=host"],
   "mounts": [

@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": "."
     // "paths": {
-    //   "@mov-ai/mov-fe-lib-ide": ["packages/mov-fe-lib-ide/src/index.ts"]
+    //   "@mov-ai/app-ide-ce": ["packages/mov-fe-app-ide-ce/src/index.js"]
     // }
   },
   "exclude": ["node_modules", "tmp"]

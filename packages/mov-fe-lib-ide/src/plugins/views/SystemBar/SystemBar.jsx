@@ -82,7 +82,7 @@ const SystemBar = props => {
    * Component Did Mount
    */
   useEffect(() => {
-    on(PLUGINS.TABS.NAME, PLUGINS.TABS.ON.ACTIVE_TAB_CHANGE, tab => {
+    on(PLUGINS.TABS.NAME, PLUGINS.TABS.ON.ACTIVE_TAB_CHANGE, _tab => {
       buildMenus(call, dialogClasses).then(data => {
         setSystemMenus(data);
       });

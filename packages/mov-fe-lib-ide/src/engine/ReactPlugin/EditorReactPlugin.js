@@ -80,6 +80,7 @@ export function withEditorPlugin(ReactComponent, methods = []) {
     useEffect(() => {
       initRightMenu();
       addKeyBind(KEYBINDINGS.EDITOR_GENERAL.KEYBINDS.SAVE.SHORTCUTS, save);
+      addKeyBind(KEYBINDINGS.SAVE_ALL, saveAllDocuments);
       on(
         PLUGINS.TABS.NAME,
         PLUGINS.TABS.ON.ACTIVE_TAB_CHANGE,
@@ -106,7 +107,8 @@ export function withEditorPlugin(ReactComponent, methods = []) {
       on,
       off,
       save,
-      activateThisEditor
+      activateThisKeys,
+      saveAllDocuments
     ]);
 
     return (

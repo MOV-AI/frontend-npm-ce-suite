@@ -13,10 +13,25 @@ module.exports = {
   devtool: "source-map",
   externals: [nodeExternals()],
   resolve: {
+    alias: {
+      vscode: require.resolve(
+        "@codingame/monaco-languageclient/lib/vscode-compatibility"
+      )
+    },
     extensions: [".js", ".jsx"]
   },
   module: {
     rules: [
+      {
+        test: /\.m?js/,
+        type: "javascript/auto"
+      },
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false
+        }
+      },
       {
         test: /\.(js|mjs|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
@@ -25,14 +40,12 @@ module.exports = {
           options: {
             presets: ["@babel/preset-react", "@babel/preset-env"],
             plugins: [
+              "@babel/plugin-syntax-jsx",
               "@babel/plugin-syntax-dynamic-import",
               "@babel/plugin-syntax-import-meta",
               "@babel/plugin-proposal-class-properties",
               "@babel/plugin-proposal-json-strings",
-              [
-                "@babel/plugin-transform-runtime",
-                { useESModules: true, helpers: true }
-              ]
+              "@babel/plugin-transform-runtime"
             ]
           }
         }
@@ -57,6 +70,10 @@ module.exports = {
         use: {
           loader: "url-loader"
         }
+      },
+      {
+        test: /\.json$/,
+        loader: "json-loader"
       }
     ]
   }

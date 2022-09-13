@@ -1,4 +1,4 @@
-import { Document } from "@mov-ai/mov-fe-lib-core";
+import { Document } from "@mov-ai/fe-lib-core";
 import { StorePluginManager } from "./plugins";
 import Subscriber from "../subscriber/Subscriber";
 import { GLOBAL_WORKSPACE } from "../utils/Constants";

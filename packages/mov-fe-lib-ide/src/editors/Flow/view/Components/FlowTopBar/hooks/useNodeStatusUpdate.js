@@ -1,5 +1,5 @@
 import { useState, useRef, useMemo, useEffect, useCallback } from "react";
-import { RobotManager } from "@mov-ai/mov-fe-lib-core";
+import { RobotManager } from "@mov-ai/fe-lib-core";
 import { FLOW_VIEW_MODE } from "../../../Constants/constants";
 import { compareDocumentPaths } from "../../../Utils/utils";
 import _isEqual from "lodash/isEqual";

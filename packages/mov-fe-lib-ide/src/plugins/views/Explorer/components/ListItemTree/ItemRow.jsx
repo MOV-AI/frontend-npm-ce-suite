@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import { ContextMenu } from "@mov-ai/mov-fe-lib-react";
+import { ContextMenu } from "@mov-ai/fe-lib-react";
 import Tooltip from "@material-ui/core/Tooltip";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import DeleteIcon from "@material-ui/icons/DeleteOutline";

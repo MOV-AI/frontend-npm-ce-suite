@@ -1,7 +1,7 @@
 import React, { Component, createRef } from "react";
 import ReactResizeDetector from "react-resize-detector";
 import PropTypes from "prop-types";
-import { Rest } from "@mov-ai/mov-fe-lib-core";
+import { Rest } from "@mov-ai/fe-lib-core";
 import { Backdrop, CircularProgress } from "@material-ui/core";
 import { SCOPES, GLOBAL_WORKSPACE } from "../../../../../utils/Constants";
 import { randomId, defaultFunction } from "../../../../../utils/Utils";

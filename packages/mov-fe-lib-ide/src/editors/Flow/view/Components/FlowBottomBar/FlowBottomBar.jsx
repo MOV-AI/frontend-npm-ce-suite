@@ -9,7 +9,7 @@ import {
   FormControlLabel,
   Switch
 } from "@material-ui/core";
-import { RobotManager, Document } from "@mov-ai/mov-fe-lib-core";
+import { RobotManager, Document } from "@mov-ai/fe-lib-core";
 import { defaultFunction } from "../../../../../utils/Utils";
 import styles from "./styles";
 

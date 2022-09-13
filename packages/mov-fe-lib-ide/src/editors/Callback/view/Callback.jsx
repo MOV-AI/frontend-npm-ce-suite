@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { MonacoCodeEditor } from "@mov-ai/mov-fe-lib-code-editor";
+import { MonacoCodeEditor } from "@mov-ai/fe-lib-code-editor";
 import { PLUGINS } from "./../../../utils/Constants";
 import { withEditorPlugin } from "../../../engine/ReactPlugin/EditorReactPlugin";
 import { usePluginMethods } from "../../../engine/ReactPlugin/ViewReactPlugin";

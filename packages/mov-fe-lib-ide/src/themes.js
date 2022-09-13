@@ -1,4 +1,4 @@
-import { Themes } from "@mov-ai/mov-fe-lib-react";
+import { Themes } from "@mov-ai/fe-lib-react";
 import lodash from "lodash";
 
 const commonColors = {
