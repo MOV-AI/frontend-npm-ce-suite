@@ -1,0 +1,43 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/mov-fe-lib-react/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/mov-fe-lib-react",
+        "tsConfig": "libs/mov-fe-lib-react/tsconfig.lib.json",
+        "project": "libs/mov-fe-lib-react/package.json",
+        "entryFile": "libs/mov-fe-lib-react/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/mov-fe-lib-react/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/mov-fe-lib-react/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/mov-fe-lib-react"],
+      "options": {
+        "jestConfig": "libs/mov-fe-lib-react/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

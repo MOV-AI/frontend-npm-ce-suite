@@ -14,7 +14,8 @@
     "dbaeumer.vscode-eslint",
     "burkeholland.simple-react-snippets",
     "Makogan.hermes-comments",
-    "SonarSource.sonarlint-vscode"
+    "SonarSource.sonarlint-vscode",
+    "nrwl.angular-console"
   ],
   "postCreateCommand": "npm ci",
   "remoteUser": "node",

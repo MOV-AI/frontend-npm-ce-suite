@@ -1,0 +1,43 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/mov-fe-lib-code-editor/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/mov-fe-lib-code-editor",
+        "tsConfig": "libs/mov-fe-lib-code-editor/tsconfig.lib.json",
+        "project": "libs/mov-fe-lib-code-editor/package.json",
+        "entryFile": "libs/mov-fe-lib-code-editor/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/mov-fe-lib-code-editor/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/mov-fe-lib-code-editor/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/mov-fe-lib-code-editor"],
+      "options": {
+        "jestConfig": "libs/mov-fe-lib-code-editor/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

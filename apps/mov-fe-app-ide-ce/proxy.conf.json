@@ -1,0 +1,63 @@
+{
+  "/token-auth/**": {
+    "target": "https://localhost",
+    "ws": true,
+    "logLevel": "debug",
+    "secure": false
+  },
+  "/api/**": {
+    "target": "https://localhost",
+    "ws": true,
+    "logLevel": "debug",
+    "secure": false
+  },
+
+  "/token-verify/**": {
+    "target": "https://localhost",
+    "ws": true,
+    "logLevel": "debug",
+    "secure": false
+  },
+  "/token-refresh/**": {
+    "target": "https://localhost",
+    "ws": true,
+    "logLevel": "debug",
+    "secure": false
+  },
+  "/domains/**": {
+    "target": "https://localhost",
+    "ws": true,
+    "logLevel": "debug",
+    "secure": false
+  },
+  "/ws/**": {
+    "target": "https://localhost",
+    "ws": true,
+    "logLevel": "debug",
+    "secure": false
+  },
+  "/logout/**": {
+    "target": "https://localhost",
+    "ws": true,
+    "logLevel": "debug",
+    "secure": false
+  },
+  "/static/maps/**": {
+    "target": "https://localhost",
+    "ws": true,
+    "logLevel": "debug",
+    "secure": false
+  },
+  "/static/meshes/**": {
+    "target": "https://localhost",
+    "ws": true,
+    "logLevel": "debug",
+    "secure": false
+  },
+  "/static/point_clouds/**": {
+    "target": "https://localhost",
+    "ws": true,
+    "logLevel": "debug",
+    "secure": false
+  }
+}

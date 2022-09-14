@@ -1,0 +1,84 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/mov-fe-app-ide-ce/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "webpackConfig": "apps/mov-fe-app-ide-ce/webpack.config.js",
+        "outputPath": "dist/apps/mov-fe-app-ide-ce",
+        "index": "apps/mov-fe-app-ide-ce/src/index.html",
+        "baseHref": "/",
+        "main": "apps/mov-fe-app-ide-ce/src/main.tsx",
+        "polyfills": "apps/mov-fe-app-ide-ce/src/polyfills.ts",
+        "tsConfig": "apps/mov-fe-app-ide-ce/tsconfig.app.json",
+        "assets": [
+          "apps/mov-fe-app-ide-ce/src/favicon.ico",
+          "apps/mov-fe-app-ide-ce/src/assets"
+        ],
+        "styles": ["apps/mov-fe-app-ide-ce/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/mov-fe-app-ide-ce/src/environments/environment.ts",
+              "with": "apps/mov-fe-app-ide-ce/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "mov-fe-app-ide-ce:build",
+        "proxyConfig": "apps/mov-fe-app-ide-ce/proxy.conf.json",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mov-fe-app-ide-ce:build:development"
+        },
+        "production": {
+          "buildTarget": "mov-fe-app-ide-ce:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/mov-fe-app-ide-ce/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/mov-fe-app-ide-ce"],
+      "options": {
+        "jestConfig": "apps/mov-fe-app-ide-ce/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

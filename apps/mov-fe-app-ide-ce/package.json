@@ -1,0 +1,26 @@
+{
+  "name": "@mov-ai/mov-fe-app-ide-ce",
+  "version": "0.0.1998-0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/mov-ai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MOV-AI/frontend-npm-ide-ce.git"
+  },
+  "homepage": "/static/mov-fe-app-ide-ce",
+  "movai": {
+    "name": "mov-fe-app-ide-ce",
+    "Label": "MOV.AI Flow™",
+    "Type": "application",
+    "Package": "mov-fe-app-ide-ce",
+    "EntryPoint": "index.html",
+    "Description": "Integrated Development Environment - CE",
+    "Icon": "fas fa-code",
+    "Callbacks": [],
+    "Configuration": "app-ide-ce",
+    "CustomConfiguration": "app-custom-ide-ce",
+    "Version": "0.0.1",
+    "generateMetadata": true
+  }
+}
